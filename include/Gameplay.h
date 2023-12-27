@@ -25,7 +25,7 @@ class GainResult;
 
 class Gameplay
 {
- public:
+public:
   explicit Gameplay(unique_ptr<Config>);
   virtual ~Gameplay() = default;
 
@@ -66,7 +66,7 @@ class Gameplay
   virtual void bind(unsigned, const shared_ptr<GameplayAction>&);
   virtual void run(const Command&);
 
- protected:
+protected:
   const unique_ptr<Config> up_config_;
   const size_t nrows_;
   const size_t ncols_;
@@ -80,6 +80,6 @@ class Gameplay
 
   vector<GainResult> gain_results_;
 
- protected:
+protected:
   map<unsigned, vector<shared_ptr<GameplayAction>>> map_actions_;
 };

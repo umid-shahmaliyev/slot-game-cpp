@@ -13,7 +13,7 @@ using namespace std;
 
 class Spinner
 {
- public:
+public:
   Spinner() = default;
   virtual ~Spinner() = default;
 

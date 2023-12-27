@@ -13,16 +13,16 @@ using namespace std;
 
 class GainsCalculator
 {
- public:
+public:
   GainsCalculator(
-	  size_t nrows, size_t ncols,
-	  const Matrix<size_t>& winlines,
-	  const map<unsigned, vector<size_t>>& paytable,
-	  unsigned wild_symbol)
-	  : nrows_(nrows), ncols_(ncols)
-	  , winlines_(winlines)
-	  , paytable_(paytable)
-	  , sym_wild_(wild_symbol)
+    size_t nrows, size_t ncols,
+    const Matrix<size_t>& winlines,
+    const map<unsigned, vector<size_t>>& paytable,
+    unsigned wild_symbol)
+    : nrows_(nrows), ncols_(ncols)
+    , winlines_(winlines)
+    , paytable_(paytable)
+    , sym_wild_(wild_symbol)
   {}
 
   virtual ~GainsCalculator() = default;
@@ -41,11 +41,11 @@ class GainsCalculator
 
   virtual size_t getGainPaytable(unsigned sym, size_t count) const
   {
-		try { return 0 == count ? 0 : paytable_.at(sym).at(count - 1); }
-		catch (...) { return 0; }
+    try { return 0 == count ? 0 : paytable_.at(sym).at(count - 1); }
+    catch (...) { return 0; }
   }
 
- protected:
+protected:
   const size_t nrows_;
   const size_t ncols_;
   const Matrix<size_t>& winlines_;

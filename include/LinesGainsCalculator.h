@@ -16,12 +16,12 @@ using namespace std;
 
 class LinesGainsCalculator : public GainsCalculator
 {
- public:
+public:
   LinesGainsCalculator(
-	  size_t, size_t,
-	  const Matrix<size_t>&,
-	  const map<unsigned, vector<size_t>>&,
-	  unsigned);
+    size_t, size_t,
+    const Matrix<size_t>&,
+    const map<unsigned, vector<size_t>>&,
+    unsigned);
 
   size_t calc(const Matrix<unsigned>&) final;
 };

@@ -9,5 +9,5 @@
 class DefaultActionSpin : public GameplayAction
 {
 public:
-	void operator()(const Command&, Gameplay&) final;
+  void operator()(const Command&, Gameplay&) final;
 };
