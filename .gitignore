@@ -1,0 +1,39 @@
+# this .gitignore file is covers all game repos, regardless of game names or types
+
+# ---------------
+# Build Artifacts
+# ---------------
+
+
+build-*
+build/
+
+.DS_Store
+.vscode
+*.code-workspace
+*.pro.user*
+
+# -------
+# General
+# -------
+
+
+# -----
+# CMake
+# -----
+
+cmake-build-*
+
+# -----
+# CLion
+# -----
+
+.idea/
+
+# ------
+# VSCode
+# ------
+
+.vscode/
+
+# nothing
