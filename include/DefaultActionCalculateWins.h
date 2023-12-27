@@ -8,6 +8,6 @@
 
 class DefaultActionCalculateWins : public GameplayAction
 {
- public:
+public:
 	void operator()(const Command&, Gameplay&) final;
 };

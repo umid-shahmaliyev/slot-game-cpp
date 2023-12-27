@@ -10,8 +10,8 @@ using namespace std;
 
 class GainResult
 {
- public:
-  GainResult(
+public:
+	GainResult(
 		unsigned sym,
 		size_t cnt,
 		size_t gain,
@@ -20,10 +20,10 @@ class GainResult
 		, count(cnt)
 		, gain(gain)
 		, winline(wl)
-  {}
+	{}
 
-  unsigned symbol;
-  size_t count;
-  size_t gain;
-  size_t winline;
+	unsigned symbol;
+	size_t count;
+	size_t gain;
+	size_t winline;
 };
