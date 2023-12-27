@@ -16,10 +16,10 @@ Gameplay::Gameplay(unique_ptr<Config> config)
   , symbols_(nrows_, ncols_)
   , up_spinner_(new Spinner())
   , up_gains_calculator_(new GainsCalculator(
-		nrows_, ncols_,
-		up_config_->winlines(),
-		up_config_->paytable(),
-		up_config_->wildSymbol()))
+      nrows_, ncols_,
+      up_config_->winlines(),
+      up_config_->paytable(),
+      up_config_->wildSymbol()))
 {
 }
 
@@ -34,7 +34,7 @@ void Gameplay::run(const Command& command)
 
   for (auto& action : actions)
   {
-		(*action)(command, *this);
+    (*action)(command, *this);
   }
 }
 

@@ -52,8 +52,8 @@ std::vector<T> generateSequence(std::vector<T> initializer_list)
 
 template<class T>
 Matrix<T> generateRandomReels(
-    const std::vector<std::vector<T>>& sym_dist_by_reel,
-    bool randomize = true)
+  const std::vector<std::vector<T>>& sym_dist_by_reel,
+  bool randomize = true)
 {
   const auto num_reels = sym_dist_by_reel.size();
 
