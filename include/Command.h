@@ -11,35 +11,34 @@
 
 using namespace std;
 
-class Command
-{
-	using args_type = map<string, string>;
+class Command {
+  using args_type = map<string, string>;
 
 public:
-	explicit Command(int id, std::initializer_list<string> args = {}) : id_(id)
-	{
-		for (const auto& arg : args)
-		{
-			if (arg.empty())
-				throw std::runtime_error("invalid arguments");
+  explicit Command(int id, std::initializer_list<string> args = {})
+	: id_(id)
+  {
+	for (const auto &arg : args) {
+	  if (arg.empty())
+		throw std::runtime_error("invalid arguments");
 
-			args_.emplace(pair<string, string>{arg, {}});
-		}
+	  args_.emplace(pair<string, string>{arg, {}});
 	}
-	~Command() = default;
+  }
+  ~Command() = default;
 
-	int id() const { return id_; }
+  int id() const { return id_; }
 
-	const args_type::const_iterator argsBegin() const { return args_.cbegin(); }
-	args_type::iterator argsBegin() { return args_.begin(); }
+  const args_type::const_iterator argsBegin() const { return args_.cbegin(); }
+  args_type::iterator argsBegin() { return args_.begin(); }
 
-	const args_type::const_iterator argsEnd() const { return args_.cend(); }
-	args_type::iterator argsEnd() { return args_.end(); }
+  const args_type::const_iterator argsEnd() const { return args_.cend(); }
+  args_type::iterator argsEnd() { return args_.end(); }
 
-	const string& arg(const string& name) const { return args_.at(name); }
-	string& arg(const string& name) { return args_.at(name); }
+  const string &arg(const string &name) const { return args_.at(name); }
+  string &arg(const string &name) { return args_.at(name); }
 
 private:
-	int id_;
-	args_type args_;
+  int id_;
+  args_type args_;
 };
