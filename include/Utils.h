@@ -128,7 +128,7 @@ std::vector<T> stringSplit(const std::string& str, const std::string& delimiter)
 }
 
 template <class T>
-void printMat(const Matrix<T>& mat, streamsize w = 1)
+void printMat(const Matrix<T>& mat, std::streamsize w = 1)
 {
   for (unsigned r = 0; r < mat.nrows(); ++r)
   {

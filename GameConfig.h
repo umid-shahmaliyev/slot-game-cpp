@@ -90,8 +90,15 @@ public:
     up_paytable = std::make_unique<map<unsigned, vector<size_t>>>(
       map<unsigned, vector<size_t>>{
         {   SYM_1, {0, 0,  0,  0,  0}},
-        {   SYM_9, {0, 0,  5,  10, 20}},
-        {SYM_WILD, {0, 0,  10, 25, 50}}
+		{   SYM_2, {0, 0,  0,  0,  0}},
+		{   SYM_3, {0, 0,  0,  0,  0}},
+		{   SYM_4, {0, 0,  0,  0,  0}},
+		{   SYM_5, {0, 0,  0,  0,  0}},
+		{   SYM_6, {0, 0,  0,  0,  0}},
+		{   SYM_7, {0, 0,  0,  0,  0}},
+		{   SYM_8, {0, 0,  0,  0,  0}},
+        {   SYM_9, {0, 0,  5, 10, 20}},
+        {SYM_WILD, {0, 0, 10, 25, 50}}
       }
     );
   }

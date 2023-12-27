@@ -28,6 +28,7 @@ file(
     GLOB
     SOURCES
     "src/*.cpp"
+    "CustomActionCountSpins.cpp"
 )
 
 add_executable(standalone main.cpp "${SOURCES}")

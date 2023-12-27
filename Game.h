@@ -18,6 +18,7 @@
 #include "DefaultActionSpin.h"
 #include "DefaultActionCalculateWins.h"
 #include "LinesGainsCalculator.h"
+#include "CustomActionCountSpins.h"
 
 class Game : public Gameplay
 {
@@ -39,6 +40,7 @@ public:
 
     bind(CMD_SPIN, make_shared<DefaultActionSpin>());
     bind(CMD_SPIN, make_shared<DefaultActionCalculateWins>());
+	bind(CMD_SPIN, make_shared<CustomActionCountSpins>());
   }
 
   void bind(unsigned command, const shared_ptr<GameplayAction>& action) final
@@ -47,4 +49,10 @@ public:
   }
 
   string version() const final { return "v1.0"; }
+
+  size_t numSpins() const { return num_spins_; };
+  void setNumSpins(size_t num) { num_spins_ = num; };
+
+private:
+  size_t num_spins_ = 0;
 };

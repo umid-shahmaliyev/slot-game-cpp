@@ -50,6 +50,7 @@ int main()
 void printResult(const Game& game, bool verbose)
 {
   std::cout << "####################" << std::endl;
+  std::cout << "# round: " << game.numSpins() << std::endl;
   std::cout << "# balance: " << 1000000 << std::endl;
   std::cout << "# gain: " << game.roundGain() << std::endl;
   std::cout << "# screen: " << std::endl;
