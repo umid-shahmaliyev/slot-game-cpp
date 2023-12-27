@@ -42,9 +42,9 @@ std::vector<T> generateSequence(std::vector<T> initializer_list)
 
   for (auto it = initializer_list.begin(); it < initializer_list.end();)
   {
-	const auto sym = *(it++);
-	const auto count = *(it++);
-	result.insert(result.end(), count, sym);
+		const auto sym = *(it++);
+		const auto count = *(it++);
+		result.insert(result.end(), count, sym);
   }
 
   return result;
@@ -64,15 +64,15 @@ Matrix<T> generateRandomReels(
 
   for (size_t i = 0; i < num_reels; ++i)
   {
-	auto reel_data = generateSequence<T>(sym_dist_by_reel.at(i));
+		auto reel_data = generateSequence<T>(sym_dist_by_reel.at(i));
 
-	if(randomize)
-	  shuffle(reel_data);
+		if(randomize)
+			shuffle(reel_data);
 
-	reels_arr.emplace_back(reel_data);
+		reels_arr.emplace_back(reel_data);
 
-	if (i > 0 && (reels_arr.at(i).size() != reels_arr.at(i - 1).size()))
-	  throw std::runtime_error("invalid arguments");
+		if (i > 0 && (reels_arr.at(i).size() != reels_arr.at(i - 1).size()))
+			throw std::runtime_error("invalid arguments");
   }
 
   const auto reels_length = reels_arr.at(0).size();
@@ -81,12 +81,12 @@ Matrix<T> generateRandomReels(
 
   for (unsigned c = 0; c < num_reels; ++c)
   {
-	const auto& reel_data = reels_arr.at(c);
-	for (unsigned r = 0; r < reels_length; ++r)
-	{
-	  const auto sym = reel_data.at(r);
-	  mat_reels(r, c) = sym;
-	}
+		const auto& reel_data = reels_arr.at(c);
+		for (unsigned r = 0; r < reels_length; ++r)
+		{
+			const auto sym = reel_data.at(r);
+			mat_reels(r, c) = sym;
+		}
   }
 
   return mat_reels;
@@ -110,18 +110,18 @@ T stringToNumber(const std::string& str)
 template<class T = std::string>
 std::vector<T> stringSplit(const std::string& str, const std::string& delimiter)
 {
-  auto split = str
-			  | std::ranges::views::split(delimiter)
-			  | std::ranges::views::transform([](auto&& str) {
-					return std::string_view(&*str.begin(), std::ranges::distance(str));
-			  });
+  auto split =
+				str | std::ranges::views::split(delimiter)
+						| std::ranges::views::transform([](auto&& str) {
+							return std::string_view(&*str.begin(), std::ranges::distance(str));
+						});
 
   std::vector<T> tokens;
 
   for (auto&& s : split)
   {
-	// todo: convert s to type T
-	tokens.emplace_back(s);
+		// todo: convert s to type T
+		tokens.emplace_back(s);
   }
 
   return tokens;
@@ -132,10 +132,10 @@ void printMat(const Matrix<T>& mat, streamsize w = 1)
 {
   for (unsigned r = 0; r < mat.nrows(); ++r)
   {
-	for (unsigned c = 0; c < mat.ncols(); ++c)
-	{
-	  std::cout << std::setw(w) << mat(r, c) << " ";
-	}
-	std::cout << std::endl;
+		for (unsigned c = 0; c < mat.ncols(); ++c)
+		{
+			std::cout << std::setw(w) << mat(r, c) << " ";
+		}
+		std::cout << std::endl;
   }
 }

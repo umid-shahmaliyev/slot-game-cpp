@@ -24,26 +24,26 @@ class Game : public Gameplay
  public:
   enum Commands : unsigned
   {
-	CMD_SPIN = 8U
+		CMD_SPIN = 8U
   };
 
   explicit Game(unique_ptr<Config> game_config = std::make_unique<GameConfig>())
 	  : Gameplay(std::move(game_config))
   {
-	up_gains_calculator_ = std::make_unique<LinesGainsCalculator>(
-		nrows(), ncols(),
-		config().winlines(),
-		config().paytable(),
-		config().wildSymbol()
-	);
+		up_gains_calculator_ = std::make_unique<LinesGainsCalculator>(
+			nrows(), ncols(),
+			config().winlines(),
+			config().paytable(),
+			config().wildSymbol()
+		);
 
-	bind(CMD_SPIN, make_shared<DefaultActionSpin>());
-	bind(CMD_SPIN, make_shared<DefaultActionCalculateWins>());
+		bind(CMD_SPIN, make_shared<DefaultActionSpin>());
+		bind(CMD_SPIN, make_shared<DefaultActionCalculateWins>());
   }
 
   void bind(unsigned command, const shared_ptr<GameplayAction>& action) final
   {
-	Gameplay::bind(command, action);
+		Gameplay::bind(command, action);
   }
 
   string version() const final { return "v1.0"; }

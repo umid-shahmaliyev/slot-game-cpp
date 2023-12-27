@@ -41,28 +41,28 @@ int main()
   std::cout <<  "# total simulations: " << NUM_SIMS << std::endl;
   for (size_t s = 0; s < NUM_SIMS; ++s)
   {
-	game_instance.run(CMD_SPIN);
+		game_instance.run(CMD_SPIN);
 
-	total_gain += game_instance.roundGain();
+		total_gain += game_instance.roundGain();
 
-	const auto& gain_results = game_instance.gainResults();
+		const auto& gain_results = game_instance.gainResults();
 
-	total_win_counts += gain_results.size();
+		total_win_counts += gain_results.size();
 
-	for (const auto& line_result : gain_results)
-	{
-	  map_sym_gains[line_result.symbol] += line_result.gain;
-	  ++map_sym_counts[line_result.symbol];
-	  ++map_lines_oak_cnt[{line_result.symbol, line_result.count}];
-	}
+		for (const auto& line_result : gain_results)
+		{
+			map_sym_gains[line_result.symbol] += line_result.gain;
+			++map_sym_counts[line_result.symbol];
+			++map_lines_oak_cnt[{line_result.symbol, line_result.count}];
+		}
 
-	// show progress
-	static unsigned progress = 0;
-	if (!(s % (NUM_SIMS / 100)))
-	{
-	  if (!(++progress % 20)) { std::cout <<  ": " << progress << "%" << std::endl; }
-	  else { std::cout <<  "."; }
-	}
+		// show progress
+		static unsigned progress = 0;
+		if (!(s % (NUM_SIMS / 100)))
+		{
+			if (!(++progress % 20)) { std::cout <<  ": " << progress << "%" << std::endl; }
+			else { std::cout <<  "."; }
+		}
   }
 
   auto diff_t = system_clock::now() - start_time;
@@ -81,27 +81,26 @@ int main()
 
   for (const auto& pair : map_sym_gains)
   {
-	const auto sym = pair.first;
-	const auto gains = pair.second;
-	std::cout << "sym " << sym << ", gains "<< gains << " (" << gains * 100.0 / total_gain << "%)" << std::endl;
+		const auto sym = pair.first;
+		const auto gains = pair.second;
+		std::cout << "sym " << sym << ", gains "<< gains << " (" << gains * 100.0 / total_gain << "%)" << std::endl;
   }
 
   for (const auto& pair : map_sym_counts)
   {
-	const auto sym = pair.first;
-	const auto count = pair.second;
-	std::cout << "sym " << sym << ", count "<< count << " (" << count * 100.0 / total_win_counts << "%)" << std::endl;
+		const auto sym = pair.first;
+		const auto count = pair.second;
+		std::cout << "sym " << sym << ", count "<< count << " (" << count * 100.0 / total_win_counts << "%)" << std::endl;
   }
 
   for (const auto& pair : map_lines_oak_cnt)
   {
-	const auto symbol = pair.first.first ;
-	const auto oak = pair.first.second;
+		const auto symbol = pair.first.first ;
+		const auto oak = pair.first.second;
 
-	const auto count = pair.second;
-	std::cout << "symbol " << symbol << ", oak " << oak << " - " << count << " ("<< count * 100.0 / (NUM_SIMS * 20.0) << "%)" << std::endl;
+		const auto count = pair.second;
+		std::cout << "symbol " << symbol << ", oak " << oak << " - " << count << " ("<< count * 100.0 / (NUM_SIMS * 20.0) << "%)" << std::endl;
   }
-
 
   return 0;
 }

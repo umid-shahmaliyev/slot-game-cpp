@@ -83,4 +83,3 @@ class Gameplay
  protected:
   map<unsigned, vector<shared_ptr<GameplayAction>>> map_actions_;
 };
-

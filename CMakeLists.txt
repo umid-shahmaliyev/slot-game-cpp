@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(untitled1)
+project(slot-game-cpp)
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)

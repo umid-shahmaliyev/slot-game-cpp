@@ -12,14 +12,14 @@ class GainResult
 {
  public:
   GainResult(
-	unsigned sym,
-	size_t cnt,
-	size_t gain,
-	size_t wl)
-	: symbol(sym)
-	, count(cnt)
-	, gain(gain)
-	, winline(wl)
+		unsigned sym,
+		size_t cnt,
+		size_t gain,
+		size_t wl)
+		: symbol(sym)
+		, count(cnt)
+		, gain(gain)
+		, winline(wl)
   {}
 
   unsigned symbol;

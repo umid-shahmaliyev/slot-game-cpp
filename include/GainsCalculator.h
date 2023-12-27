@@ -41,8 +41,8 @@ class GainsCalculator
 
   virtual size_t getGainPaytable(unsigned sym, size_t count) const
   {
-	try { return 0 == count ? 0 : paytable_.at(sym).at(count - 1); }
-	catch (...) { return 0; }
+		try { return 0 == count ? 0 : paytable_.at(sym).at(count - 1); }
+		catch (...) { return 0; }
   }
 
  protected:
@@ -55,4 +55,3 @@ class GainsCalculator
   size_t gain_ = 0;
   vector<GainResult> gain_results_;
 };
-
