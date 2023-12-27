@@ -40,7 +40,7 @@ public:
 
     bind(CMD_SPIN, make_shared<DefaultActionSpin>());
     bind(CMD_SPIN, make_shared<DefaultActionCalculateWins>());
-	bind(CMD_SPIN, make_shared<CustomActionCountSpins>());
+    bind(CMD_SPIN, make_shared<CustomActionCountSpins>());
   }
 
   void bind(unsigned command, const shared_ptr<GameplayAction>& action) final
