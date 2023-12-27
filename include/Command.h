@@ -16,14 +16,14 @@ class Command {
 
 public:
   explicit Command(int id, std::initializer_list<string> args = {})
-	: id_(id)
+    : id_(id)
   {
-	for (const auto &arg : args) {
-	  if (arg.empty())
-		throw std::runtime_error("invalid arguments");
+    for (const auto &arg : args) {
+      if (arg.empty())
+        throw std::runtime_error("invalid arguments");
 
-	  args_.emplace(pair<string, string>{arg, {}});
-	}
+      args_.emplace(pair<string, string>{arg, {}});
+    }
   }
   ~Command() = default;
 
