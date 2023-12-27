@@ -30,6 +30,8 @@ public:
     SYM_WILD = 10U
   };
 
+  static constexpr int LINES_DIR_LEFT_TO_RIGHT = -1;
+
   GameConfig()
   {
     num_rows = 3;

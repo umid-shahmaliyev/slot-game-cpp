@@ -9,12 +9,23 @@ LinesGainsCalculator::LinesGainsCalculator(
   size_t nrows, size_t ncols,
   const Matrix<size_t>& winlines,
   const map<unsigned, vector<size_t>>& paytable,
-  unsigned wild_symbol)
+  unsigned wild_symbol,
+  int direction)
   : GainsCalculator(nrows, ncols, winlines, paytable, wild_symbol)
+  , direction_(direction)
 {
 }
 
 size_t LinesGainsCalculator::calc(const Matrix<unsigned>& symbols)
+{
+  switch (direction_)
+  {
+    case -1: return calcFromLeft(symbols);
+    default: throw std::runtime_error("not supported");
+  }
+}
+
+size_t LinesGainsCalculator::calcFromLeft(const Matrix<unsigned>& symbols)
 {
   if (symbols.ncols() != ncols_ || symbols.nrows() != nrows_)
     throw std::logic_error("invalid arguments");

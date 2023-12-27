@@ -35,7 +35,8 @@ public:
       nrows(), ncols(),
       config().winlines(),
       config().paytable(),
-      config().wildSymbol()
+      config().wildSymbol(),
+      GameConfig::LINES_DIR_LEFT_TO_RIGHT
     );
 
     bind(CMD_SPIN, make_shared<DefaultActionSpin>());

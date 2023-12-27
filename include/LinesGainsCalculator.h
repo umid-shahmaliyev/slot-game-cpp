@@ -21,7 +21,14 @@ public:
     size_t, size_t,
     const Matrix<size_t>&,
     const map<unsigned, vector<size_t>>&,
-    unsigned);
+    unsigned,
+    int);
 
   size_t calc(const Matrix<unsigned>&) final;
+
+private:
+  size_t calcFromLeft(const Matrix<unsigned>&);
+
+private:
+  const int direction_;
 };

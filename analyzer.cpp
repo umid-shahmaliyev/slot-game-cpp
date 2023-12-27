@@ -19,10 +19,9 @@
 
 using namespace chrono;
 
-
 int main()
 {
-  const size_t NUM_SIMS = 1000000000;
+  const size_t NUM_SIMS = 10000000;
   const Command CMD_SPIN(Game::CMD_SPIN, {"bet"});
 
   Game game_instance;
