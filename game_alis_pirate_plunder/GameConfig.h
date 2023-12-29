@@ -47,8 +47,8 @@ public:
 
     // special symbols
     SYM_SCATTER  = 12U,
-    SYM_X2 		 = 13U,
-    SYM_X3 		 = 14U
+    SYM_X2       = 13U,
+    SYM_X3       = 14U
   };
 
   static constexpr int LINES_DIR_LEFT_TO_RIGHT = -1;
