@@ -15,7 +15,7 @@ Will you join Ali Baba on this daring quest and claim the pirates' hidden fortun
 
 This scenario sets the stage for an exciting slot game based on the tale of Ali Baba and the Forty Thieves, inviting players into a world of adventure and riches.
 
-### List of game symbols for "Ali's Pirate Plunder: Forty Thieves' Fortune":
+### List of game symbols:
 
 #### Regular Symbols:
 **Ali Baba**: Represents the protagonist and could serve as a high-paying symbol. \
