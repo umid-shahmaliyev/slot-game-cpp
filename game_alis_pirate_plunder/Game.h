@@ -32,10 +32,10 @@ public:
     : Gameplay(std::move(game_config))
   {
     setupGainsCalculator<sgt::LinesGainsCalculator>(
-      nrows(), ncols(),
-      config().winlines(),
-      config().paytable(),
-      config().wildSymbol(),
+      nrows_, ncols_,
+      up_config_->winlines(),
+      up_config_->paytable(),
+      up_config_->wildSymbol(),
       GameConfig::LINES_DIR_LEFT_TO_RIGHT
     );
 

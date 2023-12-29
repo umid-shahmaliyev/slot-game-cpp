@@ -72,7 +72,7 @@ void printResult(const Game& game, bool verbose)
       std::cout << "# count: " << gain_result.count << std::endl;
       std::cout << "# gain: " << gain_result.gain << std::endl;
 
-	  sgt::Matrix<unsigned> mask(game.symbols().nrows(), game.symbols().ncols(), 0);
+      sgt::Matrix<unsigned> mask(game.symbols().nrows(), game.symbols().ncols(), 0);
 
       for (size_t col = 0; col < gain_result.count; ++col)
       {
