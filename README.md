@@ -27,7 +27,7 @@ This scenario sets the stage for an exciting slot game based on the tale of Ali 
 **Jeweled Dagger**: A valuable weapon or artifact, another medium-paying symbol. \
 **Camel**: A mode of transportation in the Arabian setting, could be a lower-paying symbol. \
 **Map**: Illustrates the quest's journey, another lower-paying symbol. \
-**Pirate Ship**: Represents the sea adventure, another lower-paying symbol. \
+**Pirate Ship**: Represents the sea adventure, another lower-paying symbol.
 
 #### Special Symbols:
 **Wild Symbol**: A symbol depicting a swirling vortex or a golden key, substituting for other symbols except scatters or bonuses to form winning combinations. \
