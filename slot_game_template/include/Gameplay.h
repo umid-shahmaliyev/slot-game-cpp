@@ -71,7 +71,7 @@ public:
 
 protected:
   template<class T, class ...Params>
-  void setGainsCalculator(Params&&... params)
+  void setupGainsCalculator(Params&&... params)
   {
     up_gains_calculator_ = make_unique<T>(std::forward<Params>(params)...);
   }

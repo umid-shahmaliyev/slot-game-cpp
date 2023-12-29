@@ -31,13 +31,13 @@ public:
   explicit Game(unique_ptr<sgt::Config> game_config = std::make_unique<GameConfig>())
     : Gameplay(std::move(game_config))
   {
-	setGainsCalculator<sgt::LinesGainsCalculator>(
-	  nrows(), ncols(),
-	  config().winlines(),
-	  config().paytable(),
-	  config().wildSymbol(),
-	  GameConfig::LINES_DIR_LEFT_TO_RIGHT
-	);
+    setupGainsCalculator<sgt::LinesGainsCalculator>(
+      nrows(), ncols(),
+      config().winlines(),
+      config().paytable(),
+      config().wildSymbol(),
+      GameConfig::LINES_DIR_LEFT_TO_RIGHT
+    );
 
     bind(CMD_SPIN, make_shared<sgt::DefaultActionSpin>());
     bind(CMD_SPIN, make_shared<sgt::DefaultActionCalculateWins>());

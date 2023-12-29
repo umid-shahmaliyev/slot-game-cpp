@@ -16,31 +16,59 @@ namespace sgt
 
 class Config {
 public:
-  virtual ~Config() = default;
+  Config(
+    size_t num_rows, size_t num_cols
+    , unsigned sym_wild = 0)
+      : num_rows_(num_rows)
+      , num_cols_(num_cols)
+      , sym_wild_(sym_wild)
+  {}
 
-  virtual const size_t nrows() const { return num_rows; }
+  const size_t nrows() const { return num_rows_; }
 
-  virtual const size_t ncols() const { return num_cols; }
+  const size_t ncols() const { return num_cols_; }
 
-  virtual const vector<Matrix<unsigned>>& reelsGroup() const { return *up_reels_group; }
+  const unsigned wildSymbol() const { return sym_wild_; }
 
-  virtual const Matrix<unsigned>& reels(size_t i) const { return up_reels_group->at(i); }
+  const vector<Matrix<unsigned>>& reelsGroup() const { return *up_reels_group_; }
 
-  virtual const Matrix<size_t>& winlines() const { return *up_winlines; }
+  const Matrix<unsigned>& reels(size_t i) const { return up_reels_group_->at(i); }
 
-  virtual const size_t numWinlines() const { return up_winlines->nrows(); }
+  const Matrix<size_t>& winlines() const { return *up_winlines_; }
 
-  virtual const map<unsigned, vector<size_t>>& paytable() const { return *up_paytable; }
+  const size_t numWinlines() const { return up_winlines_->nrows(); }
 
-  virtual const unsigned wildSymbol() const { return sym_wild; }
+  const map<unsigned, vector<size_t>>& paytable() const { return *up_paytable_; }
 
 protected:
-  size_t num_rows;
-  size_t num_cols;
-  std::unique_ptr<vector<Matrix<unsigned>>> up_reels_group;
-  std::unique_ptr<Matrix<size_t>> up_winlines;
-  std::unique_ptr<map<unsigned, vector<size_t>>> up_paytable;
-  unsigned sym_wild;
+  void setupReelsGroup(vector<sgt::Matrix<unsigned>>&& reels_group)
+  {
+    up_reels_group_ = make_unique<vector<sgt::Matrix<unsigned>>>(reels_group);
+  }
+
+  void setupWinlines(vector<size_t>&& winlines)
+  {
+    if (winlines.empty() || (winlines.size() % num_cols_))
+      throw runtime_error("invalid argument");
+
+    up_winlines_ = make_unique<sgt::Matrix<size_t>>(winlines.size() / num_cols_, num_cols_, winlines);
+  }
+
+  void setupPaytable(map<unsigned, vector<size_t>>&& paytable)
+  {
+    up_paytable_ = make_unique<map<unsigned, vector<size_t>>>(paytable);
+  }
+
+protected:
+  const size_t num_rows_;
+  const size_t num_cols_;
+  const unsigned sym_wild_;
+
+  size_t num_winlines_ = 0;
+
+  unique_ptr<vector<Matrix<unsigned>>> up_reels_group_;
+  unique_ptr<Matrix<size_t>> up_winlines_;
+  unique_ptr<map<unsigned, vector<size_t>>> up_paytable_;
 };
 
 }
