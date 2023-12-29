@@ -23,8 +23,8 @@ void Spinner::spin(const Matrix<unsigned>& reels, Matrix<unsigned>& symbols)
 
     for (unsigned r = 0; r < symbols.nrows(); ++r)
     {
-      const auto row = (rr + r) % reels.nrows();
-      const auto sym = reels(row, c);
+      const auto row_reel = (rr + r) % reels.nrows();
+      const auto sym = reels(row_reel, c);
 
       symbols(r, c) = sym;
     }
