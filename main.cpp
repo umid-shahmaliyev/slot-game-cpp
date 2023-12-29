@@ -24,6 +24,7 @@ const map<unsigned, sgt::Command> MAP_COMMANDS {
 int main()
 {
   Game game_instance;
+  game_instance.setActiveReelsGroup(2);
 
   unsigned input = 0;
   while (cin >> input && input != CMD_EXIT)
@@ -55,8 +56,29 @@ void printResult(const Game& game, bool verbose)
   std::cout << "# round: " << game.numSpins() << std::endl;
   std::cout << "# balance: " << 1000000 << std::endl;
   std::cout << "# gain: " << game.roundGain() << std::endl;
+
+  sgt::Matrix<std::string> mat_print_symbols(game.symbols().nrows(), game.symbols().ncols());
+  for (size_t i = 0; i < game.symbols().data().size(); ++i)
+  {
+    const auto sym = game.symbols()(i);
+    auto& print_sym = mat_print_symbols(i);
+    switch (sym)
+    {
+    case GameConfig::SYM_WILD:
+      print_sym = "W"; break;
+    case GameConfig::SYM_SCATTER:
+      print_sym = "S"; break;
+    case GameConfig::SYM_X2:
+      print_sym = "2X"; break;
+    case GameConfig::SYM_X3:
+      print_sym = "3X"; break;
+    default:
+      print_sym = to_string(sym);
+    }
+  }
+
   std::cout << "# screen: " << std::endl;
-  printMat(game.symbols(), 2);
+  printMat(mat_print_symbols, 2);
   std::cout << std::endl;
 
   if (verbose && game.roundGain())
