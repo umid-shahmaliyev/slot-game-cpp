@@ -22,13 +22,16 @@ This scenario sets the stage for an exciting slot game based on the tale of Ali 
 
 #### Regular Symbols:
 Ali Baba: Represents the protagonist and could serve as a high-paying symbol.
+##
 Forty Thieves: The notorious band of pirates, another high-paying symbol.
+##
 Treasure Chest: Symbolizes hidden riches and acts as a medium-paying symbol.
-Scimitar: A sword commonly associated with Arabian tales, a medium-paying symbol.
-Magic Lamp: An enchanted lamp, potentially a medium-paying symbol.
-Bag of Gold Coins: Signifying wealth, another medium-paying symbol.
-Jeweled Dagger: A valuable weapon or artifact, another medium-paying symbol.
-Camel: A mode of transportation in the Arabian setting, could be a lower-paying symbol.
+##
+Scimitar: A sword commonly associated with Arabian tales, a medium-paying symbol.\
+Magic Lamp: An enchanted lamp, potentially a medium-paying symbol.\
+Bag of Gold Coins: Signifying wealth, another medium-paying symbol.\
+Jeweled Dagger: A valuable weapon or artifact, another medium-paying symbol. <br />
+Camel: A mode of transportation in the Arabian setting, could be a lower-paying symbol. <br />
 Map: Illustrates the quest's journey, another lower-paying symbol.
 Pirate Ship: Represents the sea adventure, another lower-paying symbol.
 
