@@ -6,6 +6,9 @@
 
 #include "Gameplay.h"
 
+namespace sgt
+{
+
 void DefaultActionCalculateWins::operator()(const Command&, Gameplay& gameplay)
 {
   auto& calculator = gameplay.gainsCalculator();
@@ -14,4 +17,6 @@ void DefaultActionCalculateWins::operator()(const Command&, Gameplay& gameplay)
 
   gameplay.setRoundGain(calculator.gain());
   gameplay.setGainResults(calculator.gainResults());
+}
+
 }

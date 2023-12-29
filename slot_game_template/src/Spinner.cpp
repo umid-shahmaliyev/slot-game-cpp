@@ -6,6 +6,9 @@
 
 #include "Utils.h"
 
+namespace sgt
+{
+
 void Spinner::spin(const Matrix<unsigned>& reels, Matrix<unsigned>& symbols)
 {
   if (symbols.nrows() > reels.nrows() ||
@@ -26,4 +29,6 @@ void Spinner::spin(const Matrix<unsigned>& reels, Matrix<unsigned>& symbols)
       symbols(r, c) = sym;
     }
   }
+}
+
 }

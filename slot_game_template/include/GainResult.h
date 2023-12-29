@@ -8,6 +8,9 @@
 
 using namespace std;
 
+namespace sgt
+{
+
 class GainResult
 {
 public:
@@ -27,3 +30,5 @@ public:
   size_t gain;
   size_t winline;
 };
+
+}

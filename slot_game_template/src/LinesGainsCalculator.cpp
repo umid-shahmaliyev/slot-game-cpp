@@ -5,6 +5,9 @@
 
 #include "LinesGainsCalculator.h"
 
+namespace sgt
+{
+
 LinesGainsCalculator::LinesGainsCalculator(
   size_t nrows, size_t ncols,
   const Matrix<size_t>& winlines,
@@ -78,4 +81,6 @@ size_t LinesGainsCalculator::calcFromLeft(const Matrix<unsigned>& symbols)
   }
 
   return gain_;
+}
+
 }

@@ -20,7 +20,7 @@
 #include "LinesGainsCalculator.h"
 #include "CustomActionCountSpins.h"
 
-class Game : public Gameplay
+class Game : public sgt::Gameplay
 {
 public:
   enum Commands : unsigned
@@ -28,23 +28,23 @@ public:
     CMD_SPIN = 8U
   };
 
-  explicit Game(unique_ptr<Config> game_config = std::make_unique<GameConfig>())
+  explicit Game(unique_ptr<sgt::Config> game_config = std::make_unique<GameConfig>())
     : Gameplay(std::move(game_config))
   {
-    up_gains_calculator_ = std::make_unique<LinesGainsCalculator>(
-      nrows(), ncols(),
-      config().winlines(),
-      config().paytable(),
-      config().wildSymbol(),
-      GameConfig::LINES_DIR_LEFT_TO_RIGHT
-    );
+	setGainsCalculator<sgt::LinesGainsCalculator>(
+	  nrows(), ncols(),
+	  config().winlines(),
+	  config().paytable(),
+	  config().wildSymbol(),
+	  GameConfig::LINES_DIR_LEFT_TO_RIGHT
+	);
 
-    bind(CMD_SPIN, make_shared<DefaultActionSpin>());
-    bind(CMD_SPIN, make_shared<DefaultActionCalculateWins>());
+    bind(CMD_SPIN, make_shared<sgt::DefaultActionSpin>());
+    bind(CMD_SPIN, make_shared<sgt::DefaultActionCalculateWins>());
     bind(CMD_SPIN, make_shared<CustomActionCountSpins>());
   }
 
-  void bind(unsigned command, const shared_ptr<GameplayAction>& action) final
+  void bind(unsigned command, const shared_ptr<sgt::GameplayAction>& action) final
   {
     Gameplay::bind(command, action);
   }

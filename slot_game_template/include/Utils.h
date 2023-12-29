@@ -14,6 +14,11 @@
 #include <string_view>
 #include <ranges>
 
+#include "Matrix.h"
+
+namespace sgt
+{
+
 namespace
 {
 std::random_device rd;
@@ -138,4 +143,6 @@ void printMat(const Matrix<T>& mat, std::streamsize w = 1)
     }
     std::cout << std::endl;
   }
+}
+
 }

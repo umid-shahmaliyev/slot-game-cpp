@@ -7,6 +7,9 @@
 #include <array>
 #include <stdexcept>
 
+namespace sgt
+{
+
 template<class T>
 class Matrix
 {
@@ -79,3 +82,5 @@ private:
   const size_t ncols_;
   std::vector<T> data_;
 };
+
+}

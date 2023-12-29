@@ -17,6 +17,9 @@
 
 using namespace std;
 
+namespace sgt
+{
+
 class Config;
 class Spinner;
 class GameplayAction;
@@ -67,6 +70,13 @@ public:
   virtual void run(const Command&);
 
 protected:
+  template<class T, class ...Params>
+  void setGainsCalculator(Params&&... params)
+  {
+    up_gains_calculator_ = make_unique<T>(std::forward<Params>(params)...);
+  }
+
+protected:
   const unique_ptr<Config> up_config_;
   const size_t nrows_;
   const size_t ncols_;
@@ -83,3 +93,5 @@ protected:
 protected:
   map<unsigned, vector<shared_ptr<GameplayAction>>> map_actions_;
 };
+
+}

@@ -4,6 +4,9 @@
 
 #pragma once
 
+namespace sgt
+{
+
 class Gameplay;
 class Command;
 
@@ -13,3 +16,5 @@ public:
   virtual ~GameplayAction() = default;
   virtual void operator()(const Command&, Gameplay&) = 0;
 };
+
+}

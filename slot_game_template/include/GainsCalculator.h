@@ -11,6 +11,9 @@
 
 using namespace std;
 
+namespace sgt
+{
+
 class GainsCalculator
 {
 public:
@@ -55,3 +58,5 @@ protected:
   size_t gain_ = 0;
   vector<GainResult> gain_results_;
 };
+
+}

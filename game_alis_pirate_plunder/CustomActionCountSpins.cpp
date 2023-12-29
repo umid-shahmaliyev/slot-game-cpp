@@ -6,7 +6,7 @@
 
 #include "Game.h"
 
-void CustomActionCountSpins::operator()(const Command&, Gameplay& gameplay)
+void CustomActionCountSpins::operator()(const sgt::Command&, sgt::Gameplay& gameplay)
 {
   auto& game = dynamic_cast<Game&>(gameplay);
   game.setNumSpins(game.numSpins() + 1);

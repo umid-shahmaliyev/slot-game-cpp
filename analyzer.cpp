@@ -15,14 +15,14 @@
 #include "Matrix.h"
 #include "Utils.h"
 
-#include "Game.h"
+#include "game_alis_pirate_plunder/Game.h"
 
 using namespace chrono;
 
 int main()
 {
   const size_t NUM_SIMS = 10000000;
-  const Command CMD_SPIN(Game::CMD_SPIN, {"bet"});
+  const sgt::Command CMD_SPIN(Game::CMD_SPIN, {"bet"});
 
   Game game_instance;
 

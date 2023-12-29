@@ -10,6 +10,9 @@
 #include "GameplayAction.h"
 #include "GainsCalculator.h"
 
+namespace sgt
+{
+
 Gameplay::Gameplay(unique_ptr<Config> config)
   : up_config_(std::move(config))
   , nrows_(up_config_->nrows()), ncols_(up_config_->ncols())
@@ -46,4 +49,6 @@ const Matrix<unsigned>& Gameplay::reels(size_t i) const
 const Matrix<unsigned>& Gameplay::reels() const
 {
   return up_config_->reels(active_reels_group_);
+}
+
 }

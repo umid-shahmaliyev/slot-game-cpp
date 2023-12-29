@@ -11,8 +11,10 @@
 
 using namespace std;
 
-class Config
+namespace sgt
 {
+
+class Config {
 public:
   virtual ~Config() = default;
 
@@ -40,3 +42,5 @@ protected:
   std::unique_ptr<map<unsigned, vector<size_t>>> up_paytable;
   unsigned sym_wild;
 };
+
+}

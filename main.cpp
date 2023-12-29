@@ -8,15 +8,17 @@
 #include <cassert>
 #include <array>
 
-#include "Game.h"
 #include "Command.h"
 #include "Utils.h"
+
+#include "game_alis_pirate_plunder/Game.h"
+
 
 void printResult(const Game& game, bool verbose = false);
 
 constexpr unsigned CMD_EXIT = 1;
-const map<unsigned, Command> MAP_COMMANDS {
-  {Game::CMD_SPIN, Command{Game::CMD_SPIN}}
+const map<unsigned, sgt::Command> MAP_COMMANDS {
+  {Game::CMD_SPIN, sgt::Command{Game::CMD_SPIN}}
 };
 
 int main()
@@ -70,7 +72,7 @@ void printResult(const Game& game, bool verbose)
       std::cout << "# count: " << gain_result.count << std::endl;
       std::cout << "# gain: " << gain_result.gain << std::endl;
 
-      Matrix<unsigned> mask(game.symbols().nrows(), game.symbols().ncols(), 0);
+	  sgt::Matrix<unsigned> mask(game.symbols().nrows(), game.symbols().ncols(), 0);
 
       for (size_t col = 0; col < gain_result.count; ++col)
       {

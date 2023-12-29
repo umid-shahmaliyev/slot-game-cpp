@@ -13,7 +13,7 @@
 #include "Matrix.h"
 #include "Utils.h"
 
-class GameConfig : public Config
+class GameConfig : public sgt::Config
 {
 public:
   enum Symbol : unsigned
@@ -40,7 +40,7 @@ public:
     sym_wild = 10;
 
     constexpr auto num_winlines = 20;
-    up_winlines = std::make_unique<Matrix<size_t>>(
+    up_winlines = std::make_unique<sgt::Matrix<size_t>>(
       num_winlines, num_cols,
       std::vector<size_t>{
         1, 1, 1, 1, 1,
@@ -66,21 +66,21 @@ public:
       }
     );
 
-    up_reels_group = std::make_unique<vector<Matrix<unsigned>>>(
-      vector<Matrix<unsigned>>{
-        generateRandomReels<unsigned>({
+    up_reels_group = std::make_unique<vector<sgt::Matrix<unsigned>>>(
+      vector<sgt::Matrix<unsigned>>{
+        sgt::generateRandomReels<unsigned>({
           {SYM_1, 80, SYM_9, 20, SYM_WILD, 10},
           {SYM_1, 88, SYM_9, 12, SYM_WILD, 10},
           {SYM_1, 85, SYM_9, 15, SYM_WILD, 10},
           {SYM_1, 79, SYM_9, 21, SYM_WILD, 10},
           {SYM_1, 75, SYM_9, 25, SYM_WILD, 10}}),
-        generateRandomReels<unsigned>({
+        sgt::generateRandomReels<unsigned>({
           {SYM_1, 80, SYM_9, 20, SYM_WILD, 10},
           {SYM_1, 88, SYM_9, 12, SYM_WILD, 10},
           {SYM_1, 85, SYM_9, 15, SYM_WILD, 10},
           {SYM_1, 79, SYM_9, 21, SYM_WILD, 10},
           {SYM_1, 75, SYM_9, 25, SYM_WILD, 10}}, false),
-        generateRandomReels<unsigned>({
+        sgt::generateRandomReels<unsigned>({
           {SYM_1, 80, SYM_9, 20, SYM_WILD, 10},
           {SYM_1, 80, SYM_9, 20, SYM_WILD, 10},
           {SYM_1, 80, SYM_9, 20, SYM_WILD, 10},

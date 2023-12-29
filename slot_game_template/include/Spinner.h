@@ -11,6 +11,9 @@
 
 using namespace std;
 
+namespace sgt
+{
+
 class Spinner
 {
 public:
@@ -19,3 +22,5 @@ public:
 
   virtual void spin(const Matrix<unsigned>&, Matrix<unsigned>&);
 };
+
+}

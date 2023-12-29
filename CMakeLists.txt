@@ -23,12 +23,12 @@ string(REPLACE "-O1" "-O3" CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
 string(REPLACE "-O2" "-O3" CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
 string(REPLACE "-O2" "-O3" CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
 
-include_directories("include")
+include_directories("slot_game_template/include")
 file(
     GLOB
     SOURCES
-    "src/*.cpp"
-    "CustomActionCountSpins.cpp"
+    "slot_game_template/src/*.cpp"
+    "game_alis_pirate_plunder/*.cpp"
 )
 
 add_executable(standalone main.cpp "${SOURCES}")

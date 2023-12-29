@@ -14,6 +14,9 @@
 
 using namespace std;
 
+namespace sgt
+{
+
 class LinesGainsCalculator : public GainsCalculator
 {
 public:
@@ -32,3 +35,5 @@ private:
 private:
   const int direction_;
 };
+
+}

@@ -6,8 +6,13 @@
 
 #include "GameplayAction.h"
 
-class DefaultActionSpin : public GameplayAction
+namespace sgt
+{
+
+class DefaultActionCalculateWins : public GameplayAction
 {
 public:
   void operator()(const Command&, Gameplay&) final;
 };
+
+}
