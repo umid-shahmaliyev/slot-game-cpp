@@ -15,7 +15,6 @@ Will you join Ali Baba on this daring quest and claim the pirates' hidden fortun
 
 This scenario sets the stage for an exciting slot game based on the tale of Ali Baba and the Forty Thieves, inviting players into a world of adventure and riches.
 
-
 ### List of game symbols for "Ali's Pirate Plunder: Forty Thieves' Fortune":
 
 #### Regular Symbols:
@@ -33,7 +32,4 @@ This scenario sets the stage for an exciting slot game based on the tale of Ali 
 #### Special Symbols:
 **Wild Symbol**: A symbol depicting a swirling vortex or a golden key, substituting for other symbols except scatters or bonuses to form winning combinations. \
 **Multiplier Symbol**: This could be a symbol showing "x2" or "x3", which when part of a winning combination, multiplies the win accordingly. \
-**Scatter/Bonus Symbol**: A depiction of the secret cave or a treasure map, triggering free spins or bonus rounds when appearing in a certain number. \
-
-These symbols can be designed creatively, with vibrant colors and intricate details, to enhance the visual appeal of the game and immerse players into the world of Ali Baba and the Forty Thieves.
-
+**Scatter/Bonus Symbol**: A depiction of the secret cave or a treasure map, triggering free spins or bonus rounds when appearing in a certain number.
