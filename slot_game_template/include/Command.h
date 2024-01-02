@@ -14,7 +14,8 @@ using namespace std;
 namespace sgt
 {
 
-class Command {
+class Command
+{
   using args_type = map<string, string>;
 
 public:

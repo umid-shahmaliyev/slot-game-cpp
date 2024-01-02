@@ -14,7 +14,8 @@ using namespace std;
 namespace sgt
 {
 
-class Config {
+class Config
+{
 public:
   Config(
     size_t num_rows, size_t num_cols
